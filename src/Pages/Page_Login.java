@@ -19,7 +19,7 @@ public class Page_Login extends Page_BasePage {
 		if (emailElement.isDisplayed()) {
 			emailElement.sendKeys(email);
 		} else {
-			System.out.println("Email field is not displayed");
+			printMessage("Email field is not displayed");
 		}
 	}
 	
@@ -29,7 +29,7 @@ public class Page_Login extends Page_BasePage {
 		if (passwordElement.isDisplayed()) {
 			passwordElement.sendKeys(password);
 		} else {
-			System.out.println("Password field is not displayed");
+			printMessage("Password field is not displayed");
 		}
 	}
 	
@@ -40,17 +40,27 @@ public class Page_Login extends Page_BasePage {
 		if (loginElement.isDisplayed()) {
 			loginElement.click();
 		} else {
-			System.out.println("Password field is not displayed");
+			printMessage("Password field is not displayed");
 		}
 	}
 	
-	public void loginOk() {
+	public void loginOK() {
 		String currentUrl = driver.getCurrentUrl();
 		
 		if (currentUrl.equalsIgnoreCase("https://workshops-fe-gm.firebaseapp.com/")) {
-			System.out.println("You are logged successfully");
+			printMessage("You are logged successfully");
 		} else {
-			System.out.println("You are not logged successfully");
+			printMessage("You are not logged successfully");
+		}
+	}
+	
+	public void loginKO(String message) {
+		WebElement messageElement = driver.findElement(By.className("message-body"));
+		
+		if (messageElement.isDisplayed() && messageElement.getText().equalsIgnoreCase(message)) {
+			printMessage("Invalid credentials");
+		} else {
+			printMessage("messageElement did not find");
 		}
 	}
 	

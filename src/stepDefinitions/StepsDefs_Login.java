@@ -31,6 +31,12 @@ public class StepsDefs_Login {
 
 	@Then("^I should be on the homepage$")
 	public void i_should_be_on_the_homepage() throws Exception {
-	    loginPage.loginOk();
+	    loginPage.loginOK();
+	}
+	
+	@Then("^I see a \"([^\"]*)\" message$")
+	public void i_see_a_message(String message) throws Exception {
+		Thread.sleep(500);
+	    loginPage.loginKO(message);
 	}
 }
