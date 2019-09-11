@@ -47,21 +47,19 @@ public class LoginPage extends BasePage {
 	public void loginOK() {
 		String currentUrl = driver.getCurrentUrl();
 		
-		if (currentUrl.equalsIgnoreCase(HOMEPAGE_URL)) {
-			printMessage("You are logged successfully");
-		} else {
+		if (!currentUrl.contentEquals(HOMEPAGE_URL)) {
 			printMessage("You are not logged successfully");
 		}
+		driver.close();
 	}
 	
 	public void loginKO(String message) {
 		WebElement messageElement = driver.findElement(By.className("message-body"));
 		
-		if (messageElement.isDisplayed() && messageElement.getText().equalsIgnoreCase(message)) {
-			printMessage("Invalid credentials");
-		} else {
+		if (!messageElement.isDisplayed() && !messageElement.getText().equalsIgnoreCase(message)) {
 			printMessage("messageElement did not find");
 		}
+		driver.close();
 	}
 	
 }

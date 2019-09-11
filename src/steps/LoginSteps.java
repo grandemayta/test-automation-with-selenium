@@ -30,6 +30,7 @@ public class LoginSteps {
 
 	@Then("^I should be on the homepage$")
 	public void i_should_be_on_the_homepage() throws Exception {
+		Thread.sleep(500);
 	    loginPage.loginOK();
 	}
 	

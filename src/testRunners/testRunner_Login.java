@@ -8,7 +8,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "resources/features", 
-		glue = "stepDefinitions")
+		glue = "stepDefinitions",
+		monochrome = true,
+		dryRun = false)
 
 public class testRunner_Login {
 
