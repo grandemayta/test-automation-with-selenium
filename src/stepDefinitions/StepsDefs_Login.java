@@ -5,7 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.Page_Login;
 
-public class StepsDefs_Login {
+public class StepsDefs_Login { 
 	
 	Page_Login loginPage = new Page_Login();
 

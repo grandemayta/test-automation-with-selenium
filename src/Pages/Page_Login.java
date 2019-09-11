@@ -10,7 +10,7 @@ public class Page_Login extends Page_BasePage {
 	
 	public void openLoginPage() {
 		driver = new ChromeDriver();
-		driver.get("https://workshops-fe-gm.firebaseapp.com/login");
+		driver.get(LOGIN_URL);
 	}
 	
 	public void fillinEmail(String email) {
@@ -47,7 +47,7 @@ public class Page_Login extends Page_BasePage {
 	public void loginOK() {
 		String currentUrl = driver.getCurrentUrl();
 		
-		if (currentUrl.equalsIgnoreCase("https://workshops-fe-gm.firebaseapp.com/")) {
+		if (currentUrl.equalsIgnoreCase(HOMEPAGE_URL)) {
 			printMessage("You are logged successfully");
 		} else {
 			printMessage("You are not logged successfully");
