@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import common.Page_BasePage;
+import common.BasePage;
 
-public class Page_Login extends Page_BasePage {
+public class LoginPage extends BasePage {
 	
 	public void openLoginPage() {
 		driver = new ChromeDriver();

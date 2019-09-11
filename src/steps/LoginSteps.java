@@ -1,13 +1,12 @@
-package stepDefinitions;
+package steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pages.Page_Login;
+import pages.LoginPage;
 
-public class StepsDefs_Login { 
-	
-	Page_Login loginPage = new Page_Login();
+public class LoginSteps {
+	LoginPage loginPage = new LoginPage();
 
 	@Given("^Open the login page$")
 	public void open_the_login_page() throws Exception {
